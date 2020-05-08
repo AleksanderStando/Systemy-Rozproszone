@@ -1,0 +1,16 @@
+[
+  {
+    "countryName": "Poland",
+    "regions": ["Krakow", "Warszawa", "Gdansk"],
+    "maxTemp": 30,
+    "minTemp": -10,
+    "scale": "CELSIUS"
+  },
+  {
+    "countryName": "USA",
+    "regions": ["Los Angeles", "Washington", "Texas"],
+    "maxTemp": 80,
+    "minTemp": 40,
+    "scale": "FAHRENHEIT"
+  }
+]

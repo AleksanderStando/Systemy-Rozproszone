@@ -1,0 +1,46 @@
+
+syntax = "proto3";
+
+service Weather {
+  rpc subscribe(CountryRequest) returns (stream ForecastResponse);
+}
+
+message CountryRequest {
+  string countryName = 1;
+}
+
+message ForecastResponse {
+  Time time = 1;
+  repeated RegionForecast regionForecast = 2;
+}
+
+message Time {
+  int32 year = 1;
+  int32 month = 2;
+  int32 day = 3;
+  int32 hour = 4;
+  int32 minute = 5;
+  int32 seconds = 6;
+
+}
+
+message RegionForecast {
+  string regionName = 1;
+
+  enum Cloudiness {
+    SUNNY = 0;
+    MIXED = 1;
+    CLOUDY = 2;
+  }
+
+  Cloudiness cloudiness = 2;
+  double temp = 3;
+
+  enum Scale {
+      CELSIUS = 0;
+      FAHRENHEIT = 1;
+      KELVIN = 2;
+  }
+
+  Scale scale = 4;
+}
